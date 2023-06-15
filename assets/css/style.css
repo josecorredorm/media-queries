@@ -10,7 +10,7 @@
     grid-template-areas: 
     "navbar"
     "select-menu"
-    "main"
+    "sales"
     "footer";
     grid-template-rows: 1fr 1fr 5fr 1fr;
 }
@@ -35,9 +35,22 @@
 .navbar__logo_logo{
     width: 50px;
 }
-.navbar__logo__letter_title{
+.navbar__logo__letter{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.navbar__logo__letter_title1{
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.5px;
+}
+.navbar__logo__letter_title2{
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 5px;
+    font-style: italic;
 }
 .logo{
     width: 30px;
@@ -59,13 +72,15 @@
     width: 100%;
     background-color: #ccd8bc;
 }
+.sales{
+    grid-area: sales;
+}
 .main{
     display: flex;
     flex-direction: column;
     height: 65vh;
     overflow-y: auto;
     background-color:  #fff;
-    grid-area: main;
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 10px;
@@ -83,7 +98,7 @@
 }
    
 .main__card__img{
-    width: 100%;
+    width: 80%;
 }
 .main__card__title{
     font-weight: bold;
@@ -130,48 +145,86 @@
 }
 
 @media (min-width: 576px){
+    .container{
+        grid-template-areas: 
+        "navbar select-menu"
+        "navbar sales"
+        "footer sales";
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr 6fr 1fr;
+    }
+    .navbar{
+        background-color: #558c9e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+        padding-top: 50px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
     .navbar__menu{
         display: none;
     }
     .navbar__option{
-        display: list-item;
+        color: #fff;
+        display: contents;
     }
-    .container{
-        display: grid;
-        grid-template-areas: 
-        "navbar select-menu"
-        "navbar main"
-        "footer main";
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 1fr 5fr 1fr;
+    .navbar__option ul{
+        list-style: none;
     }
+    .navbar__option ul li p{
+        padding-top: 5px;
+    }
+    .navbar__logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .navbar__logo_logo{
+        width: 100px;
+    }
+    .logo{
+        width: 75px;
+    }
+    .navbar__logo__letter{
+        color: #fff;
+        justify-content: center;
+    }
+    .navbar__logo__letter_title1{
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    .navbar__logo__letter_title2{
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+        font-style: italic;
+    }
+    
     .main{
         display: flex;
         justify-content:space-around;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 85vh;
+        height: 75vh;
+        padding-left: 5%;
+        padding-right: 5%;
+        gap: 2px;
     }
     .main__card{
-        width: 280px;
+        width: 260px;
         height: 350px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content:center;
     }
-    .navbar{
-        background-color: #fff;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
+    .footer p{
+        font-size: 12px;
     }
 }
-
-
-.color1 {color: #558c9e;}
-.color2 {color: #468a84;}
-.color3 {color: #ccd8bc;}
-.color4 {color: #eff5e5;}
-.color5 {color: #f9f9f9;}
